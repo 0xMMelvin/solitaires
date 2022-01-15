@@ -20,6 +20,7 @@ import {
 import { WalletDialogProvider } from '@solana/wallet-adapter-material-ui'
 
 import { ThemeProvider, createTheme } from '@material-ui/core'
+import { Splash } from './Splash'
 
 const theme = createTheme({
   palette: {
@@ -72,13 +73,14 @@ const App = () => {
       <ConnectionProvider endpoint={endpoint}>
         <WalletProvider wallets={wallets} autoConnect>
           <WalletDialogProvider>
-            <Home
-              candyMachineId={candyMachineId}
-              connection={connection}
-              startDate={startDateSeed}
-              txTimeout={txTimeoutInMilliseconds}
-              rpcHost={rpcHost}
-            />
+            <Splash />
+            {/*<Home*/}
+            {/*  candyMachineId={candyMachineId}*/}
+            {/*  connection={connection}*/}
+            {/*  startDate={startDateSeed}*/}
+            {/*  txTimeout={txTimeoutInMilliseconds}*/}
+            {/*  rpcHost={rpcHost}*/}
+            {/*/>*/}
           </WalletDialogProvider>
         </WalletProvider>
       </ConnectionProvider>
