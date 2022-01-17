@@ -53,6 +53,12 @@ const useStyles = makeStyles((theme: Theme) =>
         marginRight: 0
       }
     },
+    navSocial: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '100%'
+    },
     image: {
       borderRadius: `0.25rem`,
       width: '100%'
@@ -248,12 +254,21 @@ const Home = (props: HomeProps) => {
       <nav className={classes.nav}>
         <img className={classes.brand} src={brandLogo} alt="" />
         <div className={classes.navLinks}>
-          <Button className={classes.navLinkItem} color="primary">
-            Mint
+          <Button
+            href="https://solitaires-dao.io"
+            className={classes.navLinkItem}
+            color="primary"
+          >
+            DAO
           </Button>
-          <Button className={classes.navLinkItem} color="primary">
-            DAO (Soon)
-          </Button>
+          <div className={classes.navSocial}>
+            <a href="https://discord.gg/4NzpjHfU">
+              <i className={`${classes.icon} fa-2x fab fa-discord`} />
+            </a>
+            <a href="https://twitter.com/solitairesNFT">
+              <i className={`${classes.icon} fa-2x fab fa-twitter`} />
+            </a>
+          </div>
           {wallet.connected && <DisconnectButton>Disconnect</DisconnectButton>}
         </div>
       </nav>
@@ -312,9 +327,6 @@ const Home = (props: HomeProps) => {
         <div className={classes.social}>
           <a href="https://discord.gg/4NzpjHfU">
             <i className={`${classes.icon} fa-2x fab fa-discord`} />
-          </a>
-          <a href="https://t.me/NFTArtMaster">
-            <i className={`${classes.icon} fa-2x fab fa-telegram`} />
           </a>
           <a href="https://twitter.com/solitairesNFT">
             <i className={`${classes.icon} fa-2x fab fa-twitter`} />
