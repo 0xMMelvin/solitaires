@@ -29,7 +29,7 @@ import { MintInfo } from './MintInfo'
 import { MintButton } from './MintButton'
 import { GatewayProvider } from '@civic/solana-gateway-react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
-import king2 from './assets/img/king-02.png'
+import king from './assets/img/king.png'
 import brandLogo from './assets/img/brand-logo.svg'
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme: Theme) =>
       width: '100%',
       justifyContent: 'space-between',
       alignItems: 'center',
-      backgroundColor: '#101d2c',
       marginBottom: theme.spacing(5)
     },
     navLinks: {
@@ -276,7 +275,7 @@ const Home = (props: HomeProps) => {
         <MintSection>
           <Container maxWidth="md">
             <Paper className={classes.paper}>
-              <img className={classes.image} src={king2} alt="King" />
+              <img className={classes.image} src={king} alt="King" />
             </Paper>
           </Container>
           <Container maxWidth="xs" style={{ position: 'relative' }}>
@@ -333,7 +332,7 @@ const Home = (props: HomeProps) => {
           </a>
         </div>
         <Typography className={classes.createdBy} color={`primary`}>
-          Created by <Link href="https://twitter.com/0xMMelvin">0xMMelvin</Link>
+          Created by <Link href="https://twitter.com/0xNeuroD">0xNeuroD <i className={`fab fa-twitter`} /></Link>
         </Typography>
 
         <Snackbar
