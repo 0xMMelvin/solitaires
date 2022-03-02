@@ -74,7 +74,10 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     icon: {
       color: '#c29947',
-      margin: theme.spacing(2)
+      margin: theme.spacing(2),
+      '&:hover': {
+        color: '#fff'
+      }
     },
     createdBy: {
       textAlign: 'center',
@@ -103,13 +106,13 @@ const ConnectButton = styled(WalletDialogButton)`
 const DisconnectButton = styled(WalletDisconnectButton)`
   border: 1px solid #c29947;
   border-radius: 0.25rem;
-  color: #c29947;
+  color: #101d2c;
   font-weight: bold;
-  background-color: #101d2c;
+  background-color: #c29947;
 
   &:hover {
-    color: #101d2c;
-    background-color: #c29947;
+    color: #c29947;
+    background-color: #101d2c;
   }
 `
 
@@ -260,14 +263,12 @@ const Home = (props: HomeProps) => {
           >
             DAO
           </Button>
-          <div className={classes.navSocial}>
             <a href="https://discord.gg/4NzpjHfU">
               <i className={`${classes.icon} fa-2x fab fa-discord`} />
             </a>
             <a href="https://twitter.com/solitairesNFT">
               <i className={`${classes.icon} fa-2x fab fa-twitter`} />
             </a>
-          </div>
           {wallet.connected && <DisconnectButton>Disconnect</DisconnectButton>}
         </div>
       </nav>
