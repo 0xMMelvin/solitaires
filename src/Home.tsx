@@ -258,17 +258,28 @@ const Home = (props: HomeProps) => {
         <div className={classes.navLinks}>
           <Button
             href="https://solitaires-dao.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            disabled
             className={classes.navLinkItem}
             color="primary"
           >
-            DAO
+            DAO Coming Soon
           </Button>
-            <a href="https://discord.gg/4NzpjHfU">
-              <i className={`${classes.icon} fa-2x fab fa-discord`} />
-            </a>
-            <a href="https://twitter.com/solitairesNFT">
-              <i className={`${classes.icon} fa-2x fab fa-twitter`} />
-            </a>
+          <a
+            href="https://discord.gg/RUV7tdMSyQ"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className={`${classes.icon} fa-2x fab fa-discord`} />
+          </a>
+          <a
+            href="https://twitter.com/solitairesNFT"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className={`${classes.icon} fa-2x fab fa-twitter`} />
+          </a>
           {wallet.connected && <DisconnectButton>Disconnect</DisconnectButton>}
         </div>
       </nav>
@@ -325,15 +336,30 @@ const Home = (props: HomeProps) => {
           </Container>
         </MintSection>
         <div className={classes.social}>
-          <a href="https://discord.gg/4NzpjHfU">
+          <a
+            href="https://discord.gg/RUV7tdMSyQ"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className={`${classes.icon} fa-2x fab fa-discord`} />
           </a>
-          <a href="https://twitter.com/solitairesNFT">
+          <a
+            href="https://twitter.com/solitairesNFT"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className={`${classes.icon} fa-2x fab fa-twitter`} />
           </a>
         </div>
         <Typography className={classes.createdBy} color={`primary`}>
-          Created by <Link href="https://twitter.com/0xNeuroD">0xNeuroD <i className={`fab fa-twitter`} /></Link>
+          Created by{' '}
+          <Link
+            href="https://twitter.com/0xNeuroD"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            0xNeuroD <i className={`fab fa-twitter`} />
+          </Link>
         </Typography>
 
         <Snackbar
