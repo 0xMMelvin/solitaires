@@ -29,7 +29,7 @@ import { MintInfo } from './MintInfo'
 import { MintButton } from './MintButton'
 import { GatewayProvider } from '@civic/solana-gateway-react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
-import king2 from './assets/img/king-02.png'
+import king from './assets/img/king.png'
 import brandLogo from './assets/img/brand-logo.svg'
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme: Theme) =>
       width: '100%',
       justifyContent: 'space-between',
       alignItems: 'center',
-      backgroundColor: '#101d2c',
       marginBottom: theme.spacing(5)
     },
     navLinks: {
@@ -52,6 +51,12 @@ const useStyles = makeStyles((theme: Theme) =>
       '&:last-of-type': {
         marginRight: 0
       }
+    },
+    navSocial: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '100%'
     },
     image: {
       borderRadius: `0.25rem`,
@@ -69,7 +74,10 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     icon: {
       color: '#c29947',
-      margin: theme.spacing(2)
+      margin: theme.spacing(2),
+      '&:hover': {
+        color: '#fff'
+      }
     },
     createdBy: {
       textAlign: 'center',
@@ -98,13 +106,13 @@ const ConnectButton = styled(WalletDialogButton)`
 const DisconnectButton = styled(WalletDisconnectButton)`
   border: 1px solid #c29947;
   border-radius: 0.25rem;
-  color: #c29947;
+  color: #101d2c;
   font-weight: bold;
-  background-color: #101d2c;
+  background-color: #c29947;
 
   &:hover {
-    color: #101d2c;
-    background-color: #c29947;
+    color: #c29947;
+    background-color: #101d2c;
   }
 `
 
@@ -248,12 +256,30 @@ const Home = (props: HomeProps) => {
       <nav className={classes.nav}>
         <img className={classes.brand} src={brandLogo} alt="" />
         <div className={classes.navLinks}>
-          <Button className={classes.navLinkItem} color="primary">
-            Mint
+          <Button
+            href="https://solitaires-dao.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            disabled
+            className={classes.navLinkItem}
+            color="primary"
+          >
+            DAO Coming Soon
           </Button>
-          <Button className={classes.navLinkItem} color="primary">
-            DAO (Soon)
-          </Button>
+          <a
+            href="https://discord.gg/RUV7tdMSyQ"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className={`${classes.icon} fa-2x fab fa-discord`} />
+          </a>
+          <a
+            href="https://twitter.com/solitairesNFT"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className={`${classes.icon} fa-2x fab fa-twitter`} />
+          </a>
           {wallet.connected && <DisconnectButton>Disconnect</DisconnectButton>}
         </div>
       </nav>
@@ -261,7 +287,7 @@ const Home = (props: HomeProps) => {
         <MintSection>
           <Container maxWidth="md">
             <Paper className={classes.paper}>
-              <img className={classes.image} src={king2} alt="King" />
+              <img className={classes.image} src={king} alt="King" />
             </Paper>
           </Container>
           <Container maxWidth="xs" style={{ position: 'relative' }}>
@@ -310,18 +336,30 @@ const Home = (props: HomeProps) => {
           </Container>
         </MintSection>
         <div className={classes.social}>
-          <a href="https://discord.gg/4NzpjHfU">
+          <a
+            href="https://discord.gg/RUV7tdMSyQ"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className={`${classes.icon} fa-2x fab fa-discord`} />
           </a>
-          <a href="https://t.me/NFTArtMaster">
-            <i className={`${classes.icon} fa-2x fab fa-telegram`} />
-          </a>
-          <a href="https://twitter.com/solitairesNFT">
+          <a
+            href="https://twitter.com/solitairesNFT"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className={`${classes.icon} fa-2x fab fa-twitter`} />
           </a>
         </div>
         <Typography className={classes.createdBy} color={`primary`}>
-          Created by <Link href="https://twitter.com/0xMMelvin">0xMMelvin</Link>
+          Created by{' '}
+          <Link
+            href="https://twitter.com/0xNeuroD"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            0xNeuroD <i className={`fab fa-twitter`} />
+          </Link>
         </Typography>
 
         <Snackbar

@@ -15,7 +15,7 @@ export const MintInfo = ({ candyMachine }: HeaderProps) => {
     <>
       {candyMachine && (
         <Grid container direction="row" wrap="nowrap">
-          <Grid container sm direction="column">
+          <Grid item sm>
             <Typography variant="body2" color="textSecondary">
               Remaining
             </Typography>
@@ -29,7 +29,7 @@ export const MintInfo = ({ candyMachine }: HeaderProps) => {
               {`${candyMachine?.state.itemsRemaining}`}
             </Typography>
           </Grid>
-          <Grid container sm direction="column">
+          <Grid item sm>
             <Typography variant="body2" color="textSecondary">
               Price
             </Typography>
