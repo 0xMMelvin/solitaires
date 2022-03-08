@@ -68,6 +68,7 @@ const App = () => {
   )
 
   return (
+    // Add <Splash /> and comment out <Home /> for Coming Soon
     <ThemeProvider theme={theme}>
       <ConnectionProvider endpoint={endpoint}>
         <WalletProvider wallets={wallets} autoConnect>
